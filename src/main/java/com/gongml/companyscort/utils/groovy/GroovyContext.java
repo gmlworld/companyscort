@@ -142,13 +142,13 @@ public class GroovyContext {
 		return script.getBinding().getVariable(key);
 	}
 	
-	/** 
-	* @Description: 多个线程获取到同一个script，在绑定数据到获取结果的过程需要同步 
-	* @Param: [script, binding] 
-	* @return: java.lang.Object 
+	/**
+	* @Description:  多个线程获取到同一个script，在绑定数据到获取结果的过程需要同步
+	* @Param: [script, binding]
+	* @return: java.lang.Object
 	* @Author: Gongml
-	* @Date: 2018-12-25 
-	*/ 
+	* @Date: 2018-12-25
+	*/
 	public Object runScript(Script script,Binding binding){
 		synchronized (runlock) {
 			script.setBinding(binding);
