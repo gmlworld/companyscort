@@ -13,5 +13,4 @@ import java.util.List;
 @Data
 public class HtmlParseRule {
     private List<HtmlRowRule> rowRules;
-    private List<HtmlCombinationRule> combinationRules;
 }
