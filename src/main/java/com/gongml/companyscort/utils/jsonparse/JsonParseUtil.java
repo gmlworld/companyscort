@@ -39,12 +39,12 @@ public class JsonParseUtil {
     }
 
     /**
-    * @Description: 通过规则解析json
-    * @Param: [jsonStr, jsonParseRule]
-    * @return: java.util.List<java.util.Map<java.lang.String,java.lang.Object>>
-    * @Author: Gongml
-    * @Date: 2018-12-25
-    */
+     * @Description: 通过规则解析json
+     * @Param: [jsonStr, jsonParseRule]
+     * @return: java.util.List<java.util.Map   <   java.lang.String   ,   java.lang.Object>>
+     * @Author: Gongml
+     * @Date: 2018-12-25
+     */
     public List<Map<String, Object>> parseJsonData(String jsonStr, JsonParseRule jsonParseRule) throws Exception {
         List<Map<String, Object>> listData = new ArrayList<>();
         try {
@@ -59,7 +59,13 @@ public class JsonParseUtil {
                 if (StringUtils.isEmpty(jsonPath)) {
                     mList.add("");
                 } else {
-                    Object obj = JsonPath.read(json, jsonPath);
+                    Object obj = null;
+                    try {
+                        obj = JsonPath.read(json, jsonPath);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        obj = null;
+                    }
                     if (obj instanceof List) {
                         mList = (List) obj;
                     } else {

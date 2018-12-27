@@ -14,6 +14,6 @@ public class CompilerConfiguration2 extends CompilerConfiguration {
 
     public CompilerConfiguration2(){
         super();
-        super.setScriptBaseClass(GrovvyFunction.class.toString());
+        super.setScriptBaseClass(GrovvyFunction.class.getName());
     }
 }

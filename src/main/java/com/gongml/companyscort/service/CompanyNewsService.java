@@ -12,6 +12,7 @@ import java.util.List;
  * @create: 2018-12-22 22:44
  **/
 public interface CompanyNewsService {
+    CompanyNews getCompanyNews(String gpdm);
     int saveCompanyNews(CompanyNews companyNews);
     List<CompanyNews> selectCompanyNewsByDate(Date date);
     int deleteOldCompanyNews();

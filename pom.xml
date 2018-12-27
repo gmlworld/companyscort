@@ -19,9 +19,21 @@
         <groovy.version>2.4.12</groovy.version>
         <jsoup.version>1.10.3</jsoup.version>
         <xsoup.version>0.3.1</xsoup.version>
+        <fastjson.version>1.2.5</fastjson.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>us.codecraft</groupId>
             <artifactId>xsoup</artifactId>
@@ -84,6 +96,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
