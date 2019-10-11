@@ -28,9 +28,7 @@ public interface IMailService {
      * @param content
      * @throws MessagingException
      */
-    public void sendHtmlMail(String to, String subject, String content) throws MessagingException;
-
-    public void sendHtmlMail(String to, String subject, String content, String... cc);
+    public void sendHtmlMail(String to, String subject, String content, String... cc) throws MessagingException;
 
     /**
      * 发送带附件的邮件
@@ -41,9 +39,7 @@ public interface IMailService {
      * @param filePath
      * @throws MessagingException
      */
-    public void sendAttachmentsMail(String to, String subject, String content, String filePath) throws MessagingException;
-
-    public void sendAttachmentsMail(String to, String subject, String content, String filePath, String... cc);
+     void sendAttachmentsMail(String to, String subject, String content, String filePath, String... cc) throws MessagingException;
 
     /**
      * 发送正文中有静态资源的邮件
@@ -55,8 +51,6 @@ public interface IMailService {
      * @param rscId
      * @throws MessagingException
      */
-    public void sendResourceMail(String to, String subject, String content, String rscPath, String rscId) throws MessagingException;
-
-    public void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc);
+    public void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc) throws MessagingException;
 
 }

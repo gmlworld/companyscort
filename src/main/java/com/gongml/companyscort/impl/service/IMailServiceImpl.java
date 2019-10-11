@@ -60,19 +60,15 @@ public class IMailServiceImpl implements IMailService {
      * @param content
      */
     @Override
-    public void sendHtmlMail(String to, String subject, String content) throws MessagingException {
+    public void sendHtmlMail(String to, String subject, String content, String... cc) throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
         helper.setFrom(from);
         helper.setTo(to);
+        helper.setCc(cc);
         helper.setSubject(subject);
         helper.setText(content, true);
         mailSender.send(message);
-    }
-
-    @Override
-    public void sendHtmlMail(String to, String subject, String content, String... cc) {
-
     }
 
     /**
@@ -83,12 +79,14 @@ public class IMailServiceImpl implements IMailService {
      * @param content
      * @param filePath
      */
-    public void sendAttachmentsMail(String to, String subject, String content, String filePath) throws MessagingException {
+    @Override
+    public void sendAttachmentsMail(String to, String subject, String content, String filePath, String... cc) throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
 
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
         helper.setFrom(from);
         helper.setTo(to);
+        helper.setCc(cc);
         helper.setSubject(subject);
         helper.setText(content, true);
 
@@ -97,11 +95,6 @@ public class IMailServiceImpl implements IMailService {
         helper.addAttachment(file.getName(), resource);
 
         mailSender.send(message);
-    }
-
-    @Override
-    public void sendAttachmentsMail(String to, String subject, String content, String filePath, String... cc) {
-
     }
 
     /**
@@ -113,12 +106,14 @@ public class IMailServiceImpl implements IMailService {
      * @param rscPath
      * @param rscId
      */
-    public void sendResourceMail(String to, String subject, String content, String rscPath, String rscId) throws MessagingException {
+    @Override
+    public void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc) throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
 
         MimeMessageHelper helper = new MimeMessageHelper(message, true);
         helper.setFrom(from);
         helper.setTo(to);
+        helper.setCc(cc);
         helper.setSubject(subject);
         helper.setText(content, true);
 
@@ -126,10 +121,5 @@ public class IMailServiceImpl implements IMailService {
         helper.addInline(rscId, res);
 
         mailSender.send(message);
-    }
-
-    @Override
-    public void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc) {
-
     }
 }
