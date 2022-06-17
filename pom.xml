@@ -19,7 +19,7 @@
         <groovy.version>2.4.12</groovy.version>
         <jsoup.version>1.10.3</jsoup.version>
         <xsoup.version>0.3.1</xsoup.version>
-        <fastjson.version>1.2.31</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
     </properties>
 
     <dependencies>
